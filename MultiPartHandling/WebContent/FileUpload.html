@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST" action="FileUpload" enctype="multipart/form-data">
+		File: <input type="file" name="file" id="file" /> <br /> <br />
+		<input type="submit" value="Upload" name="upload" id="upload" />
+		Write Options: <br /> <input type="radio" name="writemethod"
+			value="partwrite"> Using Part.write() <br /> <input
+			type="radio" name="writemethod" value="fileoutputstream">Creating
+		FileOutputStream
+
+	</form>
+</body>
+</html>

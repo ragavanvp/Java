@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>IPFiltering</display-name>
+  <filter>
+		<filter-name>IpFilterExample</filter-name>
+		<filter-class>IpFilterExample</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>IpFilterExample</filter-name>
+		<url-pattern>/IpFilterExample</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>CallIpFilter</servlet-name>
+		<servlet-class>CallIpFilter</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CallIpFilter</servlet-name>
+		<url-pattern>/CallIpFilter</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
