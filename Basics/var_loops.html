@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript var in loops</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function callme() {
+    for( var i = 1; i < 5; i++ ) {
+        console.log(i);                          // i visible on here
+    };
+    console.log("Outside for block:", i);        // i still visible
+}
+
+callme();
+
+</script>
+</body>
+</html>   		

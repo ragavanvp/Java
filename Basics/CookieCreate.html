@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript Functions: Creating a Cookie</title>
+<style>
+body {
+	font-family: Verdana;
+	background: #44c767;
+	color: #fff;
+}
+</style>
+<script>
+  function createCookie(form){
+    var myDate = new Date();
+    myDate.setTime(myDate.getTime() + 24 * 60 * 60 * 1000);
+    myDate.setFullYear(myDate.getFullYear() + 1); //Expiration Date
+    
+    client = form.username.value;
+    mybackground = form.userBackground.value;
+    
+    document.cookie=escape("Client's Name:") + "=" +
+    escape(client) + ";expires=" + myDate.toGMTString();
+    
+    document.cookie=escape("Background Color:") + "=" +
+    escape(mybackground) + ";expires=" + myDate.toGMTString();
+    
+    alert(document.cookie);
+  }
+    
+  function message(demoform){
+    user = demoform.username.value;
+    var pos = document.cookie.indexOf("name=");
+    if(pos != -1){
+      var start = pos + 5;
+      var end = document.cookie.indexOf(";", start);
+      if(end == -1){
+        end=document.cookie.length;}
+      user = unescape(document.cookie.substring(start, end));
+      alert("Hello" + user + "Welcome to TutorialsPark.com");
+    }
+    else{alert("No cookies were found today");}
+  }
+</script>
+</head>
+<body onload="document.myform.reset()">
+	<h2>Cookie Create</h2>
+	<form name="myform">
+		Client's Name: <input type="text" name="username" size="50" /><br>
+
+		Set Background Color: <input type="text" name="userBackground" /><br>
+
+		<p>
+			<input type="button" value="Create Cookie"
+				onClick="createCookie(this.form)" />
+		</p>
+
+		<p>
+			<input type="button" value="See Cookie" onClick="message(this.form)" />
+		</p>
+
+	</form>
+</body>
+</html>

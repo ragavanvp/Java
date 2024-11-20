@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+	<p id="output"></p>
+	<button id="writeCookie">write Cookie</button>
+	<button id="updateCookie">update Cookie</button>
+	<button id="deleteCookie">Delete Cookie</button>
+	<script>
+		var counter = 0;
+		document.getElementById("updateCookie").onclick = cookieCreate;
+		document.getElementById("writeCookie").onclick = cookieUpdate;
+		document.getElementById("deleteCookie").onclick = cookieDelete;
+		cookieRead();
+		function cookieRead() {
+			document.getElementById("output").innerHTML = document.cookie;
+		}
+		function cookieCreate() {
+			counter++;
+			document.cookie = "Cookie No -" + counter + "= Value" + counter;
+			cookieRead();
+		}
+		function cookieUpdate() {
+			document.cookie = "Cookie No -" + counter + "= Updated Value"
+					+ counter;
+			cookieRead();
+		}
+		function cookieDelete(cookieName) {
+			document.cookie = cookieName + "="
+					+ ";expires=Tue, 08-July-2014 00:00:00 GMT";
+			alert("Cookies have been deleted");
+			getCookie();
+		}
+	</script>
+</body>
+
+</html>

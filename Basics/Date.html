@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<time id="msg"></time>
+	<script type="text/javascript">
+		var date = new Date();
+		options = {
+			weekday : "long",
+			month : "long",
+			day : "numeric",
+			year : "numeric"
+		};
+		date = date.toLocaleString("en-AU", options);
+		document.getElementById("msg").innerHTML = Date();
+	</script>
+</body>
+</html>

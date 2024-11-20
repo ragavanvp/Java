@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript Functions: Getting a Cookie</title>
+<style>
+body {
+	font-family: Verdana;
+	background: #44c767;
+	color: #fff;
+}
+</style>
+<script>
+  function getCookie(){
+    if(document.cookie == ""){
+      document.write("No Cookies Found");
+    }
+    else{
+      var cookieString = "";
+      var demoCookie = document.cookie.split("; ");
+      for(var i=0; i<demoCookie.length; i++){
+    cookieString += demoCookie[i] + " ";
+      var cookieInfo = demoCookie[i].split("=");
+        if(cookieInfo[0] == "color"){
+          document.bgColor=cookieInfo[1];
+        }
+        }
+      }
+      alert(cookieString);
+    }
+</script>
+</head>
+<body onload="document.myform.reset()">
+	<h2>Tutorials Park</h2>
+	<form name="myform">
+		Click the button below to see values what's within document.cookie
+		property
+		<p>
+			<input type="button" value="See Cookie" onClick="getCookie()" />
+	</form>
+</body>
+</html>

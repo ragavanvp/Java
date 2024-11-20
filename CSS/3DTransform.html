@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ #wrapper
+{
+	position: relative;
+	width: 400px;
+	height:400px;
+	margin: 70px;
+    
+}
+
+#sq1, #sq2, #sq3
+{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 300px;
+	color: #fff;
+	background-color:rgba(148,0,211,0.7);
+    box-shadow:5px 5px 5px #666;
+    border-radius:10px;
+}
+
+#sq2 { background-color: rgba(34,139,34,0.7); }
+#sq3 { background-color: rgba(255,99,71, 0.7); }
+  
+#wrapper
+{-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+-webkit-transform: rotateX(-30deg) rotateY(-50deg) perspective(500px);
+ transform: rotateX(-30deg) rotateY(-50deg) perspective(500px);
+}
+#sq1
+{
+-webkit-transform: translateZ(20px); /*translate on Z axis by 20px */
+	transform: translateZ(-100px);
+}
+
+#sq2
+{
+-webkit-transform: translateZ(-100px); /*translate on Z axis by -100px */
+	transform: translateZ(-300px);
+}
+#sq3
+{
+-webkit-transform: translateZ(-200px); /*translate on Z axis by -200px */
+        transform: translateZ(-500px);
+}
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <div id="sq1">Square1</div>
+  <div id="sq2">Square2</div>
+  <div id="sq3">Square3</div>
+
+</div>
+</body>
+</html>

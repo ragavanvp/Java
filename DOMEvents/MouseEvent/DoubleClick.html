@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "ondblclick" event to a p element.</p>
+
+<p id="demo">Double-click me.</p>
+
+<script>
+document.getElementById("demo").ondblclick = function() {myFunction()};
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Here, I was double-clicked!";
+}
+</script>
+
+</body>
+</html>

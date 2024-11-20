@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "oncopy" event to an input element.</p>
+
+<input type="text" id="myInput" value="Try to copy this text">
+
+<script>
+document.getElementById("myInput").oncopy = function() {myFunction()};
+
+function myFunction() {
+    alert("You copied text!");
+}
+</script>
+
+</body>
+</html>

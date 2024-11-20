@@ -1,0 +1,30 @@
+<html> 
+<head>
+ <script src="jquery-1.8.0.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+$(document).ready(function(){
+    $("#btn1").hide();
+      $("p").hide();	
+    $("#btn2").click(function () {
+      $("p").show("slow");
+	  $("#btn2").hide();
+	  $("#btn1").show();
+    }); 
+    $("#btn1").click(function () {
+      $("p").hide("slow");
+    });
+});		
+</script>  
+</head> 
+<body> 
+<button id="btn1">Click To Hide Paragraph</button> 
+<button id="btn2">Click To Show Paragraph</button> 
+<p style="background-color:#99FFFF;font-size:16px;font-family:Verdana;">This Paragraph Will Be Hide After Click...</p> 
+</body> 
+</html>			
+
+
+
+Syntax
+ $(selector).show( speed, [callback] );
+ $(selector).hide( speed, [callback] );

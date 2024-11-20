@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="jquery-1.8.0.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("div").fadeOut(5000);
+  });
+   $("#btn2").click(function(){
+    $("div").fadeIn(5000);
+  }); 
+});
+</script>
+</head>
+ 
+<body>
+<div style="background:#FF9933;width:100%;">My Effect is fadeOut Effect</div>
+<button id="btn1">Fade Out (5 Second)</button>
+<button id="btn2">Fade In (5 Second)</button>
+</body>
+</html>
+
+
+Syntax
+ $(selector).fadeTo( speed,opacity,[callback]);
+speed: Elements is a represent by three predefined String speed ("slow", "normal", "fast"). otherwise number represent by milliseconds (Ex. 3000).
+opacity: FadeTo() method allow to add opacity parameter to given fading of parameter.
+callback: Callback is optional parameter. It is use to represents a function to be executed whenever effect is completed.
+jQuery fadeTo() Effect Methods Example:
+ <script type="text/javascript"> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").fadeTo("slow",0.20);
+  });
+});
+</script>
+
+
+
+Syntax
+ $(selector).fadeOut( speed,[callback]);
+$(selector).fadeIn( speed,[callback]);
+speed: Elements is a represent by three predefined String speed ("slow", "normal", "fast"). otherwise number represent by milliseconds (Ex. 3000).
+callback: Callback is optional parameter. It is use to represents a function to be executed whenever effect is completed.

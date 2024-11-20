@@ -1,0 +1,38 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var count= 0;
+	$("button").click(function(event){
+		$("#msg1").load('ajaxfile.txt');	
+		});
+    $("button").ajaxStart(function(){
+		count++;
+        $("#msg2").text("Start Count :  " + count );
+    	});	
+	$("button").ajaxComplete(function(){
+    	count++;		
+        $("#msg3").text("Complete Count:  " + count );
+    	});	
+	$("button").ajaxStop(function(){
+    	count++;		
+        $("#msg4").text("Stop Count:  " + count );
+    	});	
+	$("button").ajaxSuccess(function(){
+    	count++;		
+        $("#msg5").text("Success Count:  " + count );
+    	});							
+  });
+</script>
+</head>
+<body>
+<div id="msg1" style="background-color:pink;">MESSAGE 1</div>
+<div id="msg2" style="background-color:pink;">MESSAGE 2</div>
+<div id="msg3" style="background-color:pink;">MESSAGE 3</div>
+<div id="msg4" style="background-color:pink;">MESSAGE 4</div>
+<div id="msg5" style="background-color:pink;">MESSAGE 5</div>
+<button>Ajax Success Event</button>
+</body>
+</html>
+				

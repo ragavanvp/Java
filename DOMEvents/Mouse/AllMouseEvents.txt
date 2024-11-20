@@ -1,0 +1,18 @@
+Mouse Events -> Mouse Events triggered by mouse action.
+Attributes		Value		Description
+onclick			js_script	Event fire when mouse click on element	 
+ondblclick		js_script	Event fire when mouse double click on element	 
+ondrag			js_script	Script is run when element is dragged
+ondragend		js_script	Script is run at end of drag operation
+ondragenter		js_script	Script is run when element has dragged to a valid drop target
+ondragleave		js_script	Script is run when element leaves valid drop target
+ondragover		js_script	Script is run when element is dragged over on valid drop target
+ondragstart		js_script	Script is run at start of drag operation
+ondrop			js_script	Script is run when dragged element is dropped
+onmousedown		js_script	Event fire when mouse button is pressed down on element	 
+onmousemove		js_script	Event fire when mouse pointer moves over an element	 
+onmouseout		js_script	Event fire when mouse pointer moves out an element	 
+onmouseover		js_script	Event fire when mouse pointer moves over on element	 
+onmouseup		js_script	Event fire when mouse button is released over an element	 
+onmousewheel		js_script	Event fire when mouse wheel being rotated
+onscroll		js_script	Event fire when element scrollbar being scrolled

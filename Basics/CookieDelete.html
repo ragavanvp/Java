@@ -1,0 +1,45 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript Functions:Deleting a Cookie</title>
+<style>
+body {
+	font-family: Verdana;
+	background: #44c767;
+	color: #fff;
+}
+</style>
+<script>
+	var i = 0;
+
+	function getCookie() {
+		if (document.cookie == "") {
+			alert("No Cookies are found");
+			return false;
+		} else {
+			var demoCookie = document.cookie.split("; ");
+			if (i < demoCookie.length) {
+				document.myform.Ctype.value = demoCookie[i].split("=")[0];
+				i++;
+			} else {
+				alert("All cookies have been deleted");
+			}
+		}
+	}
+</script>
+</head>
+<body onload="getCookie()">
+	<h2>Tutorials Park</h2>
+	<form name="myform">
+		Do you wanna delete the cookie?
+		<p>
+			<input type="text" name="Ctype" />
+		<p>
+			<input type="radio" name="radio" value="choice"
+				onClick="deleteCookies(document.myform.Ctype.value)" /> Yes <input
+				type="radio" name="radio" value="choice" onClick="getCookie()" />
+			No
+	</form>
+</body>
+</html>

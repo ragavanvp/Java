@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript Location Object : Properties</title>
+<style>
+body {
+	font-family: Helvetica;
+}
+</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>hash:</th>
+			<td id="p1"></td>
+		</tr>
+		<tr>
+			<th>host:</th>
+			<td id="p2"></td>
+		</tr>
+		<tr>
+			<th>hostname:</th>
+			<td id="p3"></td>
+		</tr>
+		<tr>
+			<th>href:</th>
+			<td id="p4"></td>
+		</tr>
+		<tr>
+			<th>pathname:</th>
+			<td id="p5"></td>
+		</tr>
+		<tr>
+			<th>port:</th>
+			<td id="p6"></td>
+		</tr>
+		<tr>
+			<th>protocol:</th>
+			<td id="p7"></td>
+		</tr>
+		<tr>
+			<th>search:</th>
+			<td id="p8"></td>
+		</tr>
+	</table>
+
+	<script>
+		document.getElementById("p1").innerHTML = location.hash;
+		document.getElementById("p2").innerHTML = location.host;
+		document.getElementById("p3").innerHTML = location.hostname;
+		document.getElementById("p4").innerHTML = location.href;
+		document.getElementById("p5").innerHTML = location.pathname;
+		document.getElementById("p6").innerHTML = location.port;
+		document.getElementById("p7").innerHTML = location.protocol;
+		document.getElementById("p8").innerHTML = location.search;
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+ <html>
+   <head>
+     
+          <style>
+            p{font-family:Verdana;
+              border:5px ridge #009900;
+		      font-size:1em; color:#666;
+		      padding:10px;}
+   
+       </style>
+  </head>
+  <p>
+		 I am not bound to win, but I am bound to be true. 
+		 I am not bound to succeed,
+		 but I am bound to live by the light that I have.
+		 <img src="lincoln.jpg" id="visible" 
+		 alt="Abraham Lincoln dollor"/>
+		 I must stand with anybody
+		 that stands right, and stand with him while he is right,
+		 and part with him when he goes wrong.-
+		 Abraham Lincoln <br>
+		 
+		  
+</p>
+    <p> 
+        <button>Visible</button> 
+        <button>Collapse</button> 
+        <button>Hidden</button> 
+   </p> 
+   <script> 
+      var buttons = document.getElementsByTagName("BUTTON"); 
+      for (var i = 0; i < buttons.length; i++) { 
+         buttons[i].onclick = function(e) { 
+        document.getElementById("visible").style.visibility = 
+                                   e.target.innerHTML; 
+                         }; 
+                    } 
+   </script> 
+ </html>

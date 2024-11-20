@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+  {
+  $("#btn1").click(function(){
+    $("#divanimate").animate({height:"300px",width:"300px"});
+  });
+  $("#btn2").click(function(){
+    $("#divanimate").animate({height:"100px",width:"100px"});
+  });
+});
+</script>
+</head>
+
+<body>
+<button id="btn1">Animate Start</button>
+<button id="btn2">Animate Stop</button>
+<div id="divanimate" style="background: pink;margin:10px;height:100px;width:100px;" ></div>
+</body>
+</html>			
+
+Syntax
+$(selector).animate(styles,speed,[callback]) 

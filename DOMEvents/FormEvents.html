@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Javascript Form Events : keyword this</title>
+    
+   <script>
+     function validateF(iform){
+       alert("Value within Text Field is :" + 
+             iform.namestring.value );
+     }
+   </script>
+    
+    </head>
+<body>
+ <hr>
+  <form name ="demo_form">
+    <p>
+      Name :
+      <input type="text" name="namestring" size="50" />
+    </p>
+    
+    <input type="button"
+           value="print fromfield contents"
+    onclick="validateF(this.form);" /> <!-- Reference to the form object
+                                            using this keyword ---->
+    
+    <input type="reset" value="clear all">
+  </form>
+</body>
+</html>

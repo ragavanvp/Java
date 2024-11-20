@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript strict mode with function</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	"use strict";
+	var obj = {};
+	Object.defineProperties(obj, {
+		"pro1": {
+			value: 10,
+			writable: true       	// default false
+		},
+		"pro2": {
+			value: "Hello World!",
+			writable: false
+		}
+	});
+	console.log( obj );             // pro1: 10, pro2: "Hello World!"
+
+	obj.pro1 = 20;                  // works!, modify successfully
+	obj.pro2 = "Very nice!";     	// not works!, prevent to modify
+	console.log( obj );             // pro1: 20, pro2: "Hello World!
+
+</script>
+</body>
+</html>  

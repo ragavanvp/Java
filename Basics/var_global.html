@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript var in global scope</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var i = 1;
+console.log("start----", i);
+    
+function callme() {
+    for( i = 1; i < 5; i++ ) {
+        console.log("looping time----",i);    // i visible on here
+    };
+    console.log("function end----", i); 	  // i visible 
+}  
+ 
+callme();
+console.log("end----", i);        			  // i visible
+
+</script>
+</body>
+</html>   				

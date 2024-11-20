@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "onreset" event to a form element.</p>
+
+<p>When you reset the form, a function is triggered which outputs some text.</p>
+
+<form id="myForm">
+  Enter name: <input type="text">
+  <input type="reset">
+</form>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("myForm").onreset = function() {myFunction()};
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = "The form was reset";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+   <html> 
+     <head><title>Javascript Events:Register Multiple Events</title></head> 
+               <body> 
+   <p id="content1"> 
+      As a child my family's menu consisted <br>
+     of two choices: take it or leave it.</p>
+                 
+   <p id="content2">
+     Go to Heaven for the climate, Hell for the company.
+                  </p> 
+    <small>Note: Hover and click over the text to see effects.</small>
+               </body> 
+     
+     <script type="text/javascript"> 
+   var item1 = document.getElementById("content1");
+   var item2 = document.getElementById("content2"); 
+   item1.addEventListener('mouseover',styleIt,false); 
+   item2.addEventListener('click', function(){ 
+                          this.style.fontSize="24px"},false); 
+   item2.addEventListener('mouseover',styleIt,false); 
+     function   styleIt() { 
+           this.style.background ="#FA8B7C"; 
+           this.style.fontFamily ="Verdana"; 
+           this.style.padding ="10px";
+           this.style.color ="#fff";
+                        } 
+</script>
+</html>

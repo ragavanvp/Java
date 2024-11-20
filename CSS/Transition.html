@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div
+{
+width:200px;
+height:200px;
+background:#CC33FF;
+border-radius:10px;
+transition-property: transform, background, width, height;
+transition-duration: 3s;
+    transition-timing-function:ease-in;/* timing function */
+-webkit-transition-property: -webkit-transform, background, width, height; /* Safari */
+-webkit-transition-duration:3s; /* Safari */
+}
+
+div:hover
+{
+width:300px;
+background:red;
+height:300px;
+transform:translate(200px, 50px) rotate(90deg);
+-webkit-transform:translate(200px, 50px) rotate(90deg);
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This demo is not supported on IE 9 and earlier version.
+  So please upgrade</p>
+
+<div></div>
+
+<p>Hover to see effects.</p>
+
+</body>
+</html>

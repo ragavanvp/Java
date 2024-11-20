@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript var function scope</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+function callme() {
+    var quote = "clever Boy";
+    console.log("inside: "+ quote);
+}
+
+callme();
+console.log("outside: "+ quote);
+
+</script>
+</body>
+</html>

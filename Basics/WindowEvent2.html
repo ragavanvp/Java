@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript Window Object: Interactive Features</title>
+</head>
+<body>
+
+	<p>
+		<button id="scroll">Scroll</button>
+		<button id="print">Print</button>
+		<button id="close">Close</button>
+	</p>
+	James Gosling, Mike Sheridan, and Patrick Naughton initiated the Java
+	language project in June 1991. Java was originally designed for
+	interactive television, but it was too advanced for the digital cable
+	television industry at the time.[26] The language was initially called
+	Oak after an oak tree that stood outside Gosling's office. Later the
+	project went by the name Green and was finally renamed Java, from Java
+	coffee. Gosling designed Java with a C/C++-style syntax that system and
+	application programmers would find familiar
+	<p></p>
+	<script> 
+   var buttons = document.getElementsByTagName("button"); 
+                    for (var i = 0; i < buttons.length; i++) { 
+                         buttons[i].onclick = handleButtonPress; 
+                    } 
+
+                    function handleButtonPress(e) { 
+                         if (e.target.id == "print") { 
+                             window.print(); 
+                         } else if (e.target.id == "close") { 
+                             window.close(); 
+                         } else { 
+                             window.scrollTo(0, 300); 
+                         } 
+                    }                  
+               </script>
+</body>
+</html>

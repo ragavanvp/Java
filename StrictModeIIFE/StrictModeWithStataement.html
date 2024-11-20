@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript strict mode with function</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	"use strict";
+	var val = 4, radius, root, power;
+	with (Math) {
+		radius = PI * val * val;
+		root = sqrt(val);
+		power = pow(val, 3);
+	}
+
+	document.writeln("Radius: " + radius);
+	document.writeln("Square root: " + root);
+	document.writeln("Power: " + power);
+
+</script>
+</body>
+</html>  

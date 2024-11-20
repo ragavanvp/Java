@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="jquery-1.8.0.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({fontSize:"60px"},"slow");
+  });
+});
+</script>
+</head>
+ 
+<body style="overflow:auto;">
+<button>Start Animation</button>
+<div style="background:#FF9933;height:75px;position:relative;width:100%;">My Animate Effect</div>
+</body>
+</html>				
+
+Synatax: $(selector).animate({css_property},[duration],[callback]);
+
+Some jQuery Effect Methods
+Following some commonly use of event methods in jQuery:
+Method	Description
+$(selector).show()	Selected Element is Show.
+$(selector).hide()	Selected Element is Hide.
+$(selector).toggle()	Selected Element is Toggle (Hide or Show both).
+$(selector).slideDown()	Selected Element is Slide Down.
+$(selector).slideUp()	Selected Element is Slide Up.
+$(selector).slideToggle()	Selected Element is Toggle (Slide Up or Slide Down both).
+$(selector).fadeIn()	Selected Element is Fade In.
+$(selector).fadeOut()	Selected Element is Slide Out.
+$(selector).animate()	Selected Element is animate by the run of custom effect.

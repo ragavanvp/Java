@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").addClass("param");
+  });
+});
+</script>
+<style type="text/css">
+.param {
+	font: 16px Verdana, Arial;
+	font-weight:bold;
+	color:pink;
+	}
+</style>
+</head>
+
+<body>
+<p>This is a first paragraph.</p>
+<p>This is a second paragraph.</p>
+<button>Add class into first P element</button>
+</body>
+</html>				

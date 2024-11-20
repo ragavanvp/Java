@@ -1,0 +1,191 @@
+<DOCTYPE>
+<html>
+<head>
+		<style>
+video{box-shadow: 5px 5px 5px #A4A4A4; border:3px solid #fa4b2a; border-radius:5px;}
+#videoControls{-webkit-box-shadow: 5px 5px 5px #A4A4A4;
+  -moz-box-shadow: 5px 5px 5px #A4A4A4;
+  box-shadow: 5px 5px 5px #A4A4A4;
+   
+       
+       border: 2px solid #ccc; 
+       padding:20px; 
+       margin: 15px; 
+       border-radius: 20px; 
+	   width:520px;
+
+       background: rgb(252,255,244); 
+background: -moz-radial-gradient(center, ellipse cover,  rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+button{-moz-box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c579ff), color-stop(1, #a341ee) );
+	background:-moz-linear-gradient( center top, #c579ff 5%, #a341ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c579ff', endColorstr='#a341ee');
+	background-color:#c579ff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #a946f5;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #8628ce;
+}button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a341ee), color-stop(1, #c579ff) );
+	background:-moz-linear-gradient( center top, #a341ee 5%, #c579ff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a341ee', endColorstr='#c579ff');
+	background-color:#a341ee;
+}button:active {
+	position:relative;
+	top:1px;
+}
+#seekBar { border:2px solid #333; color:#eee; width:470px; height:10px; border-radius:5px; box-shadow: 5px 5px 5px #A4A4A4; background:#B2E0C2; }
+#viewSeek { background-color:#009933; height:10px; display:inline-block; border-radius:2px;  }
+</style>
+</head>
+<body>
+<video controls>
+	<source src="MW3.mp4" type="video/mp4">
+	<source src="MW3.webm" type="video/webm">
+</video>
+
+<!-- Video Player Control Buttons -->
+	<div id="videoControls">
+	<div id="seekBar"><span id="viewSeek"></span></div>
+
+<button id="Play_Pause"  onclick="togglePlay_Pause()">play>></button>
+<button id="Stop_Button"  onclick="StopVideo()">Stop</button>
+<button id="rewind_Video"  onclick="ManipulatePlaySpeed('-');" >« Rewind </button>
+<button id="fastForward"  onclick="ManipulatePlaySpeed('+');" >Fast Forward »</button>
+<button id="decreaseVolume"  onclick="AlterVolume('-')">-</button>
+<button id="volumeUp" onclick="AlterVolume('+')">+</button>
+<button id="mute"  onclick="ToggleMute_UnMute()">mute</button>
+		</div>
+</body>
+<script>
+// Select the Video Element
+var video = document.getElementsByTagName("video")[0];
+          
+// Set the Default Browser Controls to false. i.e remove them
+video.controls = false;
+          
+// Select the Play and Pause Button
+var play_pause = document.getElementById("Play_Pause");		
+			
+// Add Event Listeners inorder to alter the value of play and pause button when user toggles
+video.addEventListener('play', function() {
+	play_pause.title = "pause";
+	play_pause.innerHTML = "pause[0]";
+			}, false);
+	video.addEventListener('pause', function() {
+	play_pause.title = "play";
+	play_pause.innerHTML = "play>>";
+			}, false);
+  
+// Event Listners to regularly update the progress Bar
+	video.addEventListener('timeupdate', seekBar, false);\
+    
+// Event Listners to pause the video
+	video.addEventListener('ended', function() { this.pause(); }, false);
+			
+// Function to stop the Video and reset the current time to zero(i.e starting point)
+	function StopVideo() {
+			video.pause();
+			video.currentTime = 0;
+			}
+			
+// Function to Toggle between Play and Pause
+	function togglePlay_Pause() {
+				if (video.paused || video.ended) {
+					if (video.ended) video.currentTime = 0;
+					video.play();
+				}
+				else {
+					video.pause();
+				}
+			}
+			
+// Function to Alter the Volume in steps of 0.1
+	function AlterVolume(direction) {
+	var volume = Math.floor(video.volume * 10) / 10;
+		video.muted = false;
+		if (direction == "-") {
+		if (volume <= 0.1) video.volume = 0;
+			else video.volume -= 0.1;
+				}
+				else {
+					if (volume >= 0.9) video.volume = 1;
+					else video.volume += 0.1;   
+				}
+			}
+			
+// Toggles Volume between Mute and Unmute
+	function ToggleMute_UnMute() {
+	var mute = document.getElementById("mute");
+	if (video.muted) {
+		mute.innerHTML = "mute";
+		video.muted = false;
+				}
+				else {
+					mute.innerHTML = "unmute";
+					video.muted = true;
+				}
+			}
+			
+// Update Seekbar regularly as the video plays
+	function seekBar() {
+	var value = 0;
+	if (video.currentTime > 0) {
+	value = Math.floor((100 / video.duration) * video.currentTime);
+		                           }
+	document.getElementById("viewSeek").style.width = value + "%";
+			            }
+
+// Function to manipulate the speed of playback both fastforward and rewind
+	function ManipulatePlaySpeed(direction) {
+	 if (video.playbackRate != undefined) {
+	 if (direction == "-") video.playbackRate -= 1;
+		else video.playbackRate += 1;
+				}
+		else {
+					if (direction == "-") video.currentTime -= 1;
+					else video.currentTime += 1;
+				}
+			}
+			
+// Playback from the point on the Seekbar where the user clicks
+	function setPlayPosition(x) {				
+		var seekBar = document.getElementById("seekBar");
+		var value = (x - findPos(seekBar)).toFixed(2);
+		var timeToSet = 
+            ((video.duration / seekBar.offsetWidth).toFixed(2) * value).toFixed(2);
+				video.currentTime = timeToSet;
+			}
+  
+// Determine the real position of the object
+		function findPos(obj) {
+		var curleft = 0;
+		if (obj.offsetParent) {
+			do { curleft += obj.offsetLeft; } while (obj = obj.offsetParent);
+				}
+		return curleft;
+			}	
+  
+// Event Listner for Mouse Events on the SeekBar
+var seekBar = document.getElementById("seekBar").addEventListener
+("mouseup", function(e) { setPlayPosition(e.pageX); }, false);
+</script>
+</html>                                                                                                                                                                                                                    
+	

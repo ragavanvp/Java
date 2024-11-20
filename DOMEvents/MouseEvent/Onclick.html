@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Field1: <input type="text" id="FirstName">
+<br>
+Field2: <input type="text" id="ConfirmFirstName"><br><br>
+
+<button onclick="myFunction()">Copy Text</button>
+
+<p>A function is triggered when the button is clicked. The function copies the text from Field1 into Field2.</p>
+
+<script>
+function myFunction() {
+    document.getElementById("ConfirmFirstName").value = document.getElementById("FirstName").value;
+}
+</script>
+
+</body>
+</html>
